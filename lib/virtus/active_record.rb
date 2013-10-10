@@ -1,7 +1,11 @@
-require "virtus/active_record/version"
+require 'virtus'
+require 'virtus/active_record/version'
+require 'virtus/active_record/model'
 
 module Virtus
   module ActiveRecord
-    # Your code goes here...
+    def self.model
+      Model
+    end
   end
 end
