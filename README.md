@@ -21,8 +21,8 @@ And then execute:
 
 ## Usage
 
-To use Virtus::ActiveRecord, simply inherit from ''Virtus::ActiveRecord.model'' instead of ''ActiveRecord::Base'',
-then define your attributes with ''attribute'':
+To use Virtus::ActiveRecord, simply inherit from `Virtus::ActiveRecord.model` instead of `ActiveRecord::Base`,
+then define your attributes with `attribute`:
 
 ```ruby
 class User < Virtus::ActiveRecord.model
@@ -51,7 +51,7 @@ end
 ```
 
 After making changes to model attributes, you'll need to update your database schema.
-Simple run ''rake db:migration:create'', review the migration file, then run ''rake db:migrate''.
+Simple run `rake db:migration:create`, review the migration file, then run `rake db:migrate`.
 If you forget to create or run the migration, Virtus::ActiveRecord will notice that the
 database schema does not match the attributes declared in your model, and raise an exception.
 
