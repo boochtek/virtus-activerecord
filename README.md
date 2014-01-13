@@ -21,11 +21,11 @@ And then execute:
 
 ## Usage
 
-To use Virtus::ActiveRecord, simply inherit from `Virtus::ActiveRecord::Model` instead of `ActiveRecord::Base`,
+To use Virtus::ActiveRecord, simply inherit from `Virtus::ActiveRecord::Base` instead of `ActiveRecord::Base`,
 then define your attributes with `attribute`:
 
 ```ruby
-class User < Virtus::ActiveRecord::Model
+class User < Virtus::ActiveRecord::Base
   attribute :name, String
   attribute :age, Integer
 end
@@ -45,7 +45,7 @@ end
 You can use the Virtus DSL to fully specify the attributes:
 
 ```ruby
-class User < Virtus::ActiveRecord::Model
+class User < Virtus::ActiveRecord::Base
   attribute :name, String, required: true
   attribute :age, Integer, default: 0
   attribute :phone_numbers, Array[String], accessor: :private
@@ -55,7 +55,7 @@ end
 In addition, Virtus::ActiveRecord adds some of its own specifications:
 
 ```ruby
-class User < Virtus::ActiveRecord::Model
+class User < Virtus::ActiveRecord::Base
   attribute :name, String, length: 100
   attribute :account_value, Fixnum, scale: 2
 end

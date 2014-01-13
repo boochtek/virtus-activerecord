@@ -3,7 +3,7 @@ require 'virtus/active_record'
 describe 'Including Virtus::ActiveRecord.model' do
   before do
     module Examples
-      class User1 < Virtus::ActiveRecord::Model
+      class User1 < Virtus::ActiveRecord::Base
         attribute :name, String
         attribute :age,  Integer, required: false
       end

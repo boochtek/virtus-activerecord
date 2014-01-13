@@ -13,7 +13,7 @@ module Virtus
     #   include Virtus::ActiveRecord.model
     # end
     def self.model
-      BaseModule
+      Virtus::ActiveRecord::Model
     end
   end
 end
