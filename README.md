@@ -45,7 +45,8 @@ end
 You can use the Virtus DSL to fully specify the attributes:
 
 ```ruby
-class User < Virtus::ActiveRecord::Base
+class User
+  include Virtus::ActiveRecord.model
   attribute :name, String, required: true
   attribute :age, Integer, default: 0
   attribute :phone_numbers, Array[String], accessor: :private
@@ -55,7 +56,8 @@ end
 In addition, Virtus::ActiveRecord adds some of its own specifications:
 
 ```ruby
-class User < Virtus::ActiveRecord::Base
+class User
+  include Virtus::ActiveRecord.model
   attribute :name, String, length: 100
   attribute :account_value, Fixnum, scale: 2
 end
@@ -70,10 +72,17 @@ Once you've defined your attributes and run your migrations,
 everything else works the same as ActiveRecord normally does.
 
 
+## TODO
+
+* Implement `rake db:migration:create` schema updating.
+* Implement a way to copy DB schema from SQL DBs to model classes.
+
+
 ## Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+3. Make sure tests pass (`rspec` or `rake spec`)
+4. Commit your changes (`git commit -am 'Add some feature'`)
+5. Push to the branch (`git push origin my-new-feature`)
+6. Create new Pull Request
