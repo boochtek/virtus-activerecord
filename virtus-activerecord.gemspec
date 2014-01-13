@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency('virtus', '~> 1.0.0.rc2')
   spec.add_runtime_dependency('activerecord', '~> 4.0.0')
+  spec.add_runtime_dependency('includable-activerecord', '~> 0.0.1')
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
